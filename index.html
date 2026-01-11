@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Yadni</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Scroll Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body { overflow-x: hidden; }
+
+    /* Floating animation */
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: gold;
+      border-radius: 50%;
+      animation: sparkle 5s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes sparkle {
+      from { transform: translateY(100vh) scale(0); }
+      to { transform: translateY(-10vh) scale(1); }
+    }
+
+    /* Fireworks */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+<!-- Fireworks Canvas -->
+<canvas id="fireworks"></canvas>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Sparkles -->
+<script>
+  for (let i = 0; i < 50; i++) {
+    let s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.animationDelay = Math.random() * 6 + 's';
+    document.body.appendChild(s);
+  }
+</script>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 023609.png')">
+  <div class="text-center z-10 animate-[float_6s_ease-in-out_infinite]" data-aos="zoom-in">
+    <h1 class="text-5xl md:text-7xl font-bold text-red-300">Happiest Birthday!</h1>
+    <h1 class="text-3xl md:text-5xl font-bold text-green-200">yadni✨</h1>
+    <p class="mt-4 text-2xl"></p>
+
+    <!-- Countdown -->
+    <div id="countdown" class="mt-6 text-xl text-yellow-200"></div>
+  </div>
+</section>
+
+<!-- Message Section -->
+<section class="py-24 bg-black relative z-10">
+  <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+    <p class="text-lg leading-relaxed text-gray-200">
+      Today isn’t just your birthday, it’s a reminder of how lucky we are to have a friend like you. Stay amazing, always. 🤍
+      You make ordinary days special just by being in them. Hope this year gives you everything you deserve.
+      Another year cooler, smarter, and still unbeatable. Cheers to you and all the madness ahead 🥳
+      Celebrating you today—your kindness, your strength, and the light you bring everywhere.
+    </p>
+  </div>
+</section>
+
+<!-- Invitation Section -->
+<section class="py-24 bg-black relative z-10">
+  <div class="max-w-5xl mx-auto px-6 text-center" data-aos="zoom-in">
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-300 mb-10">You're Invited ✨</h2>
+    <img src="C:\Users\OM\Downloads\birthday invitationcard" alt="Invitation Card" class="mx-auto rounded-2xl shadow-2xl border border-yellow-400/30" />
+  </div>
+</section>
+
+<style>
+  .petal {
+    position: fixed;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, #ffd1dc, #ff9eb5);
+    border-radius: 60% 40% 60% 40%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite, sway ease-in-out infinite;
+    z-index: 5;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
+
+  @keyframes sway {
+    0%, 100% {
+      margin-left: 0px;
+    }
+    50% {
+      margin-left: 60px;
+    }
+  }
+</style>
+<body>
+<script>
+  function createPetal() {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = 
+      5 + Math.random() * 5 + 's, ' + (3 + Math.random() * 3) + 's';
+    petal.style.opacity = Math.random();
+    petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+      petal.remove();
+    }, 10000);
+  }
+
+  setInterval(createPetal, 300);
+</script>
+
+</body>
+
+
+<!-- Cherry Blossom Message Section -->
+<section class="py-32 bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 013356.png')">
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="relative max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8">A Message From the Heart 🌸</h2>
+    <p class="text-lg md:text-xl leading-relaxed text-gray-100">
+      Hi Yadni, this is from Vrashi, Sanyukta and Srusty. You have a calm and composed nature,
+      always ready to help others with genuine kindness. As a thoughtful listener and wise advisor,
+      you quietly stand out as a true dark horse. You are understanding, inclusive, and never let
+      anyone feel left out. When you step into your element, your confidence speaks louder than words.
+      We all sincerely pray that your future brings you everything you truly wish for and deserve.
+    </p>
+  </div>
+</section>
+
+
+
+<footer class="py-6 text-center text-sm text-gray-400 relative z-10">
+  Made with ❤️ by Vrashi, Sanyukta & Srusty
+</footer>
+
+<!-- Countdown Script -->
+<section>
+    <!-- Invitation Image -->
+  <img src="C:\Users\OM\Downloads\birthday invitationcard" ... >
+
+  <p>We look forward to celebrating together ✨</p>
+</section>
+
+<script>
+  const target = new Date('January 16, 2026 00:00:00').getTime();
+  const music = document.getElementById('bgMusic');
+  let musicPlayed = false;
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '🎂 It’s Time to Celebrate! 🎉';
+
+      // 🔥 MUSIC BLAST HERE
+      if (!musicPlayed) {
+        music.volume = 0.8;   // blast volume
+        music.play();
+        musicPlayed = true;
+      }
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('countdown').innerHTML =
+      `${d}d ${h}h ${m}m ${s}s`;
+  }, 1000);
+</script>
+
+
+<!-- Fireworks Script -->
+<script>
+  const canvas = document.getElementById('fireworks');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  function firework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    for (let i = 0; i < 50; i++) {
+      ctx.beginPath();
+      ctx.arc(x, y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'gold';
+      ctx.fill();
+    }
+  }
+  setInterval(firework, 800);
+</script>
+<script>
+  let audioUnlocked = false;
+  const music = document.getElementById("bgMusic");
+
+  document.addEventListener("click", () => {
+    if (!audioUnlocked) {
+      music.play().then(() => {
+        music.pause();
+        audioUnlocked = true;
+        console.log("Audio unlocked");
+      }).catch(err => {
+        console.log("Unlock failed", err);
+      });
+    }
+  });
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1200 });</script>
+
+</body>
+</html>

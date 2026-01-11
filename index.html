@@ -49,10 +49,31 @@
 <canvas id="fireworks"></canvas>
 
 <!-- Background Music -->
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
+<button id="startBtn">class="fixed inset-0 m-auto w-fit h-fit px-6 py-3 text-black font-semibold rounded-full shadow-xl z-50">
+  Tap here 🎉</button>
+
+<audio id="bgMusic" src="music.mp3"></audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("startBtn");
+
+  btn.addEventListener("click", () => {
+    music.play().then(() => {
+      console.log("Music started");
+    }).catch(err => {
+      console.log("Blocked:", err);
+    });
+    btn.style.display = "none";
+  });
+
+  // Example countdown end
+  setTimeout(() => {
+    music.currentTime = 0;
+    music.play();
+  }, 5000);
+</script>
 <!-- Sparkles -->
 <script>
   for (let i = 0; i < 50; i++) {
@@ -252,4 +273,5 @@
 
 </body>
 </html>
+
 

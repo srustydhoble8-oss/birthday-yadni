@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -49,22 +49,22 @@
 <canvas id="fireworks"></canvas>
 
 <!-- Background Music -->
-
-<button id="startBtn"class="fixed inset-0 m-auto w-fit h-fit px-6 py-3 text-black font-semibold rounded-full shadow-xl z-50">
-  Tap here 🎉</button>
+<button id="startBtn"
+class="fixed inset-0 m-auto w-fit h-fit px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full shadow-xl z-50">
+play button🌸</button>
 
 <audio id="bgMusic" src="music.mp3"></audio>
  <script>
-  const startBtn = document.getElementById("startBtn");
-  const music = document.getElementById("bgMusic");
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("bgMusic");
 
-  startBtn.addEventListener("click", () => {
-    music.volume = 0.5;
-    music.play();   // unlocks audio on mobile
-    music.pause();  // preload but stop
-    startBtn.style.display = "none";
-  });
+startBtn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  startBtn.style.display = "none";
+});
 </script>
+
 
 
 <!-- Sparkles -->
@@ -79,7 +79,7 @@
 </script>
 
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 023609.png')">
+<section class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image:url('invitation-card/invitation.jpg')">
   <div class="text-center z-10 animate-[float_6s_ease-in-out_infinite]" data-aos="zoom-in">
     <h1 class="text-5xl md:text-7xl font-bold text-red-300">Happiest Birthday!</h1>
     <h1 class="text-3xl md:text-5xl font-bold text-green-200">yadni✨</h1>
@@ -157,12 +157,12 @@
     }, 10000);
   }
 
-  setInterval(createPetal, 300);
+setInterval(createPetal, 600);
 </script>
 
 
 <!-- Cherry Blossom Message Section -->
-<section class="py-32 bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 013356.png')">
+<section class="py-32 bg-cover bg-center relative" style="background-image:url('invitation-card/invitation.jpg')">
   <div class="absolute inset-0 bg-black/70"></div>
   <div class="relative max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
     <h2 class="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8">A Message From the Heart 🌸</h2>
@@ -183,7 +183,7 @@
 </footer>
 
 <section> 
-   <img src="birthdayphoto.jpg" alt="Birthday Photocopy" class="birthday-photo mx-auto rounded-2xl shadow-2xl border border-red-400/30" />
+   <img src="birthdayphoto/photo.jpg" alt="Birthday Photocopy" class="birthday-photo mx-auto rounded-2xl shadow-2xl border border-red-400/30" />
   <p>We look forward to celebrating together ✨</p>
 </section>
   
@@ -205,6 +205,7 @@
         '🎂 It’s Time to Celebrate! 🎉';
 
       fireworksActive = true;
+    
 
       // 🎆 GRAND FINALE BURST
       
@@ -334,3 +335,4 @@
 
 </body>
 </html>
+

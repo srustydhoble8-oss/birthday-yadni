@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -38,7 +38,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
+      z-index: 0;
       pointer-events: none;
     }
   </style>
@@ -65,8 +65,6 @@ startBtn.addEventListener("click", () => {
 });
 </script>
 
-
-
 <!-- Sparkles -->
 <script>
   for (let i = 0; i < 50; i++) {
@@ -79,14 +77,14 @@ startBtn.addEventListener("click", () => {
 </script>
 
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image:url('invitation-card/invitation.jpg')">
+<section class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 023609.png')">
   <div class="text-center z-10 animate-[float_6s_ease-in-out_infinite]" data-aos="zoom-in">
     <h1 class="text-5xl md:text-7xl font-bold text-red-300">Happiest Birthday!</h1>
     <h1 class="text-3xl md:text-5xl font-bold text-green-200">yadni✨</h1>
     <p class="mt-4 text-2xl"></p>
 
     <!-- Countdown -->
-    <div id="countdown" class="mt-6 text-xl text-yellow-200"></div>
+   <div id="countdown" class="mt-6 text-xl text-yellow-200 text-center"></div>
   </div>
 </section>
 
@@ -106,7 +104,7 @@ startBtn.addEventListener("click", () => {
 <section class="py-24 bg-black relative z-10">
   <div class="max-w-5xl mx-auto px-6 text-center" data-aos="zoom-in">
     <h2 class="text-4xl md:text-5xl font-bold text-yellow-300 mb-10">You're Invited ✨</h2>
-    <img src="invitation-card/invitation.jpg" alt="Birthday Invitation Card" class="invitation-card mx-auto rounded-2xl shadow-2xl border border-yellow-400/30" />
+    <img src="invitation-card/invitation.jpg" alt="invitation-card" class="mx-auto rounded-2xl shadow-2xl border border-yellow-400/30" />
   </div>
 </section>
 
@@ -139,6 +137,7 @@ startBtn.addEventListener("click", () => {
     }
   }
 </style>
+<body>
 <script>
   function createPetal() {
     const petal = document.createElement('div');
@@ -157,12 +156,13 @@ startBtn.addEventListener("click", () => {
     }, 10000);
   }
 
-setInterval(createPetal, 600);
+  setInterval(createPetal, 300);
 </script>
+</body>
 
 
 <!-- Cherry Blossom Message Section -->
-<section class="py-32 bg-cover bg-center relative" style="background-image:url('invitation-card/invitation.jpg')">
+<section class="py-32 bg-cover bg-center relative" style="background-image:url('Screenshot 2026-01-11 013356.png')">
   <div class="absolute inset-0 bg-black/70"></div>
   <div class="relative max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
     <h2 class="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8">A Message From the Heart 🌸</h2>
@@ -179,161 +179,80 @@ setInterval(createPetal, 600);
 
 
 <footer class="py-6 text-center text-sm text-gray-400 relative z-10">
-  Made with ❤️ by Sanyukta, Vrashi & Srusty
+  Made with ❤️ by Vrashi, Sanyukta & Srusty
 </footer>
 
-<section> 
-   <img src="birthdayphoto/photo.jpg" alt="Birthday Photocopy" class="birthday-photo mx-auto rounded-2xl shadow-2xl border border-red-400/30" />
+<!-- Countdown Script -->
+<section>
+    <!-- Birthday Image -->
+  <img src="birthdayphoto/photo.jpg"alt="Birthday Photocopy" class="birthday-photo mx-auto rounded-2xl shadow-2xl border border-red-400/30" /> 
+
   <p>We look forward to celebrating together ✨</p>
 </section>
-  
-  <script>
-  let fireworksActive = false;
-</script>
-
 
 <script>
-  const target = new Date('January 16, 2026 00:00:00').getTime();
-  let musicPlayed = false;
+const target = new Date('January 16, 2026 00:00:00').getTime();
 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const diff = target - now;
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = target - now;
 
-    if (diff <= 0) {
-      document.getElementById('countdown').innerHTML =
-        '🎂 It’s Time to Celebrate! 🎉';
-
-      fireworksActive = true;
-    
-
-      // 🎆 GRAND FINALE BURST
-      
-      if (!musicPlayed) {
-        music.volume = 0.8;
-        music.play();
-        musicPlayed = true;
-      }
-
-      return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
+  if (diff <= 0) {
     document.getElementById('countdown').innerHTML =
-      `${d}d ${h}h ${m}m ${s}s`;
-  }, 1000);
+      "🎂 It’s Time to Celebrate! 🎉";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById('countdown').innerHTML =
+    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
 </script>
 
+
+<!-- Fireworks Script -->
 <script>
-  const canvas = document.getElementById("fireworks");
-  const ctx = canvas.getContext("2d");
+  const canvas = document.getElementById('fireworks');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-  let fireworks = [];
-  let particles = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
-
-  class Firework {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height;
-      this.targetY = Math.random() * canvas.height * 0.4 + 60;
-      this.speed = 7;
-      this.exploded = false;
-    }
-
-    update() {
-      this.y -= this.speed;
-      if (this.y <= this.targetY) {
-        this.exploded = true;
-        explode(this.x, this.y);
-      }
-    }
-
-    draw() {
-      ctx.fillStyle = "white";
+  function firework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    for (let i = 0; i < 50; i++) {
       ctx.beginPath();
-      ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
+      ctx.arc(x, y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'gold';
       ctx.fill();
     }
   }
-
-  class Particle {
-    constructor(x, y) {
-      this.x = x;
-      this.y = y;
-      this.radius = Math.random() * 2 + 1;
-      this.color = `hsl(${Math.random() * 360},100%,65%)`;
-      this.vx = (Math.random() - 0.5) * 7;
-      this.vy = (Math.random() - 0.5) * 7;
-      this.alpha = 1;
-      this.gravity = 0.06;
-    }
-
-    update() {
-      this.vy += this.gravity;
-      this.x += this.vx;
-      this.y += this.vy;
-      this.alpha -= 0.015;
-    }
-
-    draw() {
-      ctx.globalAlpha = this.alpha;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = 1;
-    }
-  }
-
-  function explode(x, y) {
-    for (let i = 0; i < 80; i++) {
-      particles.push(new Particle(x, y));
-    }
-  }
-
-  function animate() {
-    requestAnimationFrame(animate);
-    ctx.fillStyle = "rgba(0,0,0,0.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    fireworks.forEach((fw, i) => {
-      fw.update();
-      fw.draw();
-      if (fw.exploded) fireworks.splice(i, 1);
-    });
-
-    particles.forEach((p, i) => {
-      p.update();
-      p.draw();
-      if (p.alpha <= 0) particles.splice(i, 1);
-    });
-  }
-
-  setInterval(() => {
-    if (fireworksActive) {
-      fireworks.push(new Firework());
-    }
-  }, 700);
-
-  animate();
+  setInterval(firework, 800);
 </script>
+<script>
+  let audioUnlocked = false;
+  const music = document.getElementById("bgMusic");
 
+  document.addEventListener("click", () => {
+    if (!audioUnlocked) {
+      music.play().then(() => {
+        music.pause();
+        audioUnlocked = true;
+        console.log("Audio unlocked");
+      }).catch(err => {
+        console.log("Unlock failed", err);
+      });
+    }
+  });
+</script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1200 });</script>
 
 </body>
 </html>
-
 
